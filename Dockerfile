@@ -1,4 +1,4 @@
-FROM vimc/dettl:master
+FROM vimc/dettl:vimc-3458
 
 RUN apt-get update && apt-get install -y \
     libxml2-dev
@@ -8,5 +8,4 @@ RUN install_packages --repo=https://vimc.github.io/drat \
     data.table \
     dplyr \
     jenner \
-    rlist \
-    testthat
+    rlist
