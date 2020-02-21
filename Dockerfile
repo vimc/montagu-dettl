@@ -8,4 +8,5 @@ RUN install_packages --repo=https://vimc.github.io/drat \
     data.table \
     dplyr \
     jenner \
-    rlist
+    rlist \
+    stringr
