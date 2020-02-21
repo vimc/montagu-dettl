@@ -1,4 +1,4 @@
-FROM vimc/dettl:vimc-3453
+FROM vimc/dettl:master
 
 RUN apt-get update && apt-get install -y \
     libxml2-dev
