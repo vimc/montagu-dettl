@@ -6,6 +6,13 @@ Image for [montagu-imports](https://github.com/vimc/montagu-imports) and [annex-
 docker pull vimc/montagu-dettl:master
 ```
 
+At the moment you need to set the git information in the working directory (not your global git), so something like:
+
+```
+git config user.name "Robert Ashton"
+git config user.email "r.ashton@imperial.ac.uk"
+```
+
 Then mount your directory into the container, making sure that you set the user permissions correctly:
 
 ```
