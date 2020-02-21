@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+set -eu
+HERE=$(dirname $0)
+. $HERE/common
+
+docker push $TAG_SHA
+docker push $TAG_BRANCH
+
+if [ $GIT_BRANCH == "master" ]; then
+    DETTL_VERSION=$(docker run --rm --entrypoint bash $TAG_SHA \
+                             -c 'echo $DETTL_VERSION')
+    TAG_VERSION=$PACKAGE_ORG/$PACKAGE_NAME:v$DETTL_VERSION
+    TAG_LATEST="${PACKAGE_ORG}/${PACKAGE_NAME}:latest"
+
+    docker tag $TAG_SHA $TAG_LATEST
+    docker tag $TAG_SHA $TAG_VERSION
+fi

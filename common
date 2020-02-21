@@ -1,0 +1,10 @@
+## -*-sh-*-
+PACKAGE_ROOT=$(realpath $HERE)
+PACKAGE_NAME=montagu-dettl
+PACKAGE_ORG=vimc
+
+GIT_SHA=$(git -C "$PACKAGE_ROOT" rev-parse --short=7 HEAD)
+GIT_BRANCH=$(git -C "$PACKAGE_ROOT" symbolic-ref --short HEAD)
+
+TAG_SHA="${PACKAGE_ORG}/${PACKAGE_NAME}:${GIT_SHA}"
+TAG_BRANCH="${PACKAGE_ORG}/${PACKAGE_NAME}:${GIT_BRANCH}"
