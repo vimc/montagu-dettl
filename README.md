@@ -9,7 +9,7 @@ docker pull vimc/montagu-dettl:vimc-3452
 Then mount your directory into the container, making sure that you set the user permissions correctly:
 
 ```
-docker run -it --rm \
+docker run --rm \
   -v ${PWD}:/import \
   -u $(id -u ${USER}):$(id -g ${USER}) \
   -w /import \
@@ -18,3 +18,20 @@ docker run -it --rm \
 ```
 
 where `<path>` is the path to your import within this directory.  Other options are available (see `--help`)
+
+```
+docker run --rm vimc/montagu-dettl:vimc-3452 --help
+```
+```
+Usage:
+  dettl [options] <path>
+
+Options:
+  --db-name=NAME     Name of the database to use
+  --comment=COMMENT  Comment to add with the import
+  --dry-run          Do the dry run only
+  --force            Allow dirty git
+  --root=PATH        Path to dettl root
+```
+
+(note that here `PATH` is the path in the container).
