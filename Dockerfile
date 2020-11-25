@@ -6,7 +6,10 @@ RUN apt-get update && apt-get install -y \
 RUN install_packages --repo=https://vimc.github.io/drat \
     car \
     data.table \
+    DBI \
+    dbplyr \
     dplyr \
     jenner \
     rlist \
-    stringr
+    stringr \
+    testthat 
